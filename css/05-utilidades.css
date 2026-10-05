@@ -1,0 +1,6 @@
+.text-center { text-align: center; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.mb-0 { margin-bottom: 0 !important; }
+.mt-1 { margin-top: var(--esp-1); }
+.mt-2 { margin-top: var(--esp-2); }
+.mt-3 { margin-top: var(--esp-3); }

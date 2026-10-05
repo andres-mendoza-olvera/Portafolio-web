@@ -1,0 +1,59 @@
+.controles-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--color-texto);
+    cursor: pointer;
+}
+
+.btn-menu {
+    display: none; 
+}
+
+@media (max-width: 768px) {
+    .btn-menu {
+        display: block; 
+    }
+    
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav ul {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+        gap: 1rem;
+    }
+    
+    nav ul.activo {
+        display: flex; 
+    }
+    
+    nav li {
+        margin-left: 0;
+        text-align: center;
+    }
+    
+    main {
+        margin: var(--esp-3) auto;
+    }
+    
+    section {
+        padding: var(--esp-3);
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+}

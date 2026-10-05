@@ -1,0 +1,82 @@
+nav a {
+    font-family: var(--font-titulos);
+    font-weight: 500;
+    color: var(--color-texto-mutado);
+}
+nav a:hover {
+    color: var(--color-acento);
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-block;
+    border: 1px solid var(--color-acento);
+    color: var(--color-acento);
+    padding: var(--esp-2) var(--esp-3);
+    border-radius: var(--radio);
+    font-family: var(--font-titulos);
+    font-weight: 500;
+    margin-right: var(--esp-2);
+    transition: all 0.2s ease;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--color-acento);
+    color: var(--color-fondo);
+    text-decoration: none;
+    box-shadow: 0 0 12px rgba(6, 182, 212, 0.4);
+}
+
+.img-perfil {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-acento);
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.25);
+    margin: var(--esp-3) 0;
+}
+
+article {
+    margin-bottom: var(--esp-3);
+    padding-bottom: var(--esp-3);
+    border-bottom: 1px solid var(--color-borde);
+}
+article:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.grupo-form {
+    margin-bottom: var(--esp-2);
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo-form label {
+    font-family: var(--font-titulos);
+    font-weight: 500;
+    color: var(--color-texto);
+    margin-bottom: 0.3rem;
+}
+
+.grupo-form input,
+.grupo-form textarea {
+    background-color: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+    color: var(--color-texto);
+    padding: var(--esp-2);
+    border-radius: var(--radio);
+    font-family: var(--font-cuerpo);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grupo-form input:focus,
+.grupo-form textarea:focus {
+    outline: none;
+    border-color: var(--color-acento);
+    box-shadow: 0 0 8px rgba(6, 182, 212, 0.3);
+}

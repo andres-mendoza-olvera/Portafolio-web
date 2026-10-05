@@ -1,0 +1,38 @@
+:root {
+    /* Paleta Modo Claro */
+    --color-fondo: #F8FAFC;
+    --color-tarjeta: #FFFFFF;
+    --color-texto: #1E293B;
+    --color-texto-mutado: #64748B;
+    --color-acento: #0284C7;
+    --color-acento-hover: #0369A1;
+    --color-borde: #E2E8F0;
+    
+    /* Tipografía */
+    --font-titulos: 'Space Grotesk', system-ui, sans-serif;
+    --font-cuerpo: 'Inter', system-ui, sans-serif;
+    
+    /* Espaciado */
+    --esp-1: 0.5rem;
+    --esp-2: 1rem;
+    --esp-3: 1.5rem;
+    --esp-4: 2rem;
+    --esp-5: 3rem;
+    --esp-6: 5rem;
+    
+    /* Otros */
+    --radio: 8px;
+    --sombra: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Paleta Modo Oscuro Tech */
+.dark {
+    --color-fondo: #0F172A;
+    --color-tarjeta: #1E293B;
+    --color-texto: #F8FAFC;
+    --color-texto-mutado: #94A3B8;
+    --color-acento: #06B6D4;
+    --color-acento-hover: #0891B2;
+    --color-borde: #334155;
+    --sombra: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
