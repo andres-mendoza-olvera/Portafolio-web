@@ -46,6 +46,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const formulario = document.getElementById('form-contacto');
     const mensajeEstado = document.getElementById('mensaje-estado');
 
+    // Bloquear caracteres no permitidos en el campo nombre en tiempo real
+    const inputNombre = document.getElementById('nombre');
+    if (inputNombre) {
+        inputNombre.addEventListener('keydown', function(e) {
+            // Permitir teclas de control: retroceso, supr, flechas, tab, enter, etc.
+            const teclaControl = [
+                'Backspace', 'Delete', 'ArrowLeft', 'ArrowRight',
+                'ArrowUp', 'ArrowDown', 'Tab', 'Enter', 'Home', 'End'
+            ].includes(e.key);
+
+            if (teclaControl) return;
+
+            // Bloquear si el carácter no es letra (incluye tildes, ñ) ni espacio
+            const soloLetras = /^[A-Za-záéíóúÁÉÍÓÚüÜñÑ\s]$/;
+            if (!soloLetras.test(e.key)) {
+                e.preventDefault();
+            }
+        });
+
+        // También limpiar si el usuario pega texto con caracteres inválidos
+        inputNombre.addEventListener('paste', function(e) {
+            e.preventDefault();
+            const pegado = (e.clipboardData || window.clipboardData).getData('text');
+            const limpio = pegado.replace(/[^A-Za-záéíóúÁÉÍÓÚüÜñÑ\s]/g, '');
+            document.execCommand('insertText', false, limpio);
+        });
+    }
+
     if (formulario) {
         formulario.addEventListener('submit', function(evento) {
             evento.preventDefault();
@@ -57,8 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             [nombre, email, mensaje].forEach(el => el.style.borderColor = 'var(--color-borde)');
 
-            if (nombre.value.trim() === '') {
-                nombre.style.borderColor = '#ef4444'; 
+            const soloLetras = /^[A-Za-záéíóúÁÉÍÓÚüÜñÑ\s]+$/;
+            if (nombre.value.trim() === '' || !soloLetras.test(nombre.value)) {
+                nombre.style.borderColor = '#ef4444';
                 valido = false;
             }
             if (email.value.trim() === '' || !email.value.includes('@')) {
